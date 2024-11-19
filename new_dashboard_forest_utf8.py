@@ -428,24 +428,18 @@ if selected == "Base de données : Terre agricole":
     utilisée dans l'application.
     """)
 
-    # Connexion à la base de données SQLite
-    # Connexion à la base de données située dans le sous-dossier 'db' à la racine du projet
-    conn = sqlite3.connect('db/mon_projet.db')
+    # Connexion à la base de données SQLite avec un gestionnaire de contexte
+    with sqlite3.connect('db/mon_projet.db') as conn:
+        cursor = conn.cursor()
 
-    # Création d'un curseur pour interagir avec la base de données
-    cursor = conn.cursor()
+        # Exécution de la requête SQL pour récupérer toutes les données de la table Terre_Agricole
+        cursor.execute('SELECT * FROM Terre_Agricole')
 
-    # Exécution de la requête SQL pour récupérer toutes les données de la table Terre_Agricole
-    cursor.execute('SELECT * FROM Terre_Agricole')
-
-    # Récupération de tous les résultats de la requête
-    data = cursor.fetchall()
+        # Récupération de tous les résultats de la requête
+        data = cursor.fetchall()
 
     # Affichage des données dans l'interface de Streamlit
     st.write(data)  # Affiche les données récupérées de la table Terre_Agricole
-
-    # Fermeture de la connexion à la base de données après l'affichage des données
-    conn.close()
 
 # Section "Carte interactive : Perte de surface forestière sur 20 ans"
 elif selected == "Carte interactive : Perte de surface forestière sur 20 ans":
