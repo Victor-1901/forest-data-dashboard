@@ -1,0 +1,29 @@
+# Ignorer le dossier venv
+venv/
+venv/*
+
+# Ignorer les caches Python et fichiers temporaires
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorer les dossiers personnels et système non pertinents
+.anaconda/
+.bash_history
+.conda/
+.condarc
+.continuum/
+.ipynb_checkpoints/
+.ipython/
+.jupyter/
+.lesshst
+.streamlit/
+.virtual_documents/
+.vscode/
+AppData/
+OneDrive/
+Downloads/
+
+# Ignorer les fichiers de développement spécifiques
+.DS_Store
+Thumbs.db

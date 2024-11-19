@@ -1,0 +1,29 @@
+.stApp {
+    background-image: url(data:image/png;base64,{image_base64});
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #FFFFFF;
+    z-index: -1;
+}
+
+h1 {
+    color: #1B5E20;
+    text-shadow: 2px 2px 4px #FFFFFF;
+    animation: fadeIn 5s ease-in-out;
+}
+
+h2 {
+    color: #1B5E20;
+    text-shadow: 2px 2px 4px #FFFFFF;
+}
+
+/* Style pour les textes blancs utilisés avec st.markdown */
+.text-white {
+    color: #FFFFFF;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
