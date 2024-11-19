@@ -96,15 +96,14 @@ with st.sidebar:
                             "Statistiques descriptives",
                             "Analyse par pays / année 2023",
                             "Évolution par continent (2000-2020)",
-                            "Base de données : Terre agricole",  # Section déplacée avant la carte
-                            "Carte interactive : Perte de surface forestière sur 20 ans", # Carte après
-                            "Vidéo - Déforestation de la forêt amazonienne",  
+                            "Base de données : Terre agricole",
+                            "Carte interactive : Perte de surface forestière sur 20 ans",
+                            "Vidéo - Déforestation de la forêt amazonienne",
                             "Conclusion et recommandations"],
                            default_index=0,
                            key="menu_selection")
 
-
-# Affichage des sections en fonction de la sélection dans le menu interactif
+ # Affichage des sections en fonction de la sélection dans le menu interactif
 if selected == "Problématique":
     st.header("Problématique")
     st.write("Malgré les efforts de conservation, la déforestation continue d'affecter de nombreuses régions. Quelles sont les dynamiques en jeu ?")
