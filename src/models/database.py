@@ -1,27 +1,40 @@
 import sqlite3
 
-class Database :
-    def __init__(self) -> None:
-        self.__db = sqlite3.connect("project.db")
-
-    def setup(self):
-        self.execute("CREATE TABLE IF NOT EXISTS users(uid INTEGER PRIMARY KEY UNIQUE ,email VARCHAR UNIQUE, password VARCHAR)")
-        self.execute("CREATE TABLE IF NOT EXISTS logs(id INTEGER PRIMARY KEY UNIQUE ,uid INTERGER ,action VARCHAR ,value VARCHAR)")
-        try:
-            self.execute(f"INSERT INTO users (email,password) VALUES ('admin', 'admin')")
-        except:
-            print("Admin already exists.")
-        self.commit()
-
-    def drop(self):
-        self.execute("DROP TABLE users")
-        self.execute("DROP TABLE logs")
-
-    def execute(self, query:str):
-        return self.__db.execute(query)
+class Database:
+    def __init__(self, db_path="db/mon_projet.db") -> None:
+        """Initialisation de la connexion à la base de données."""
+        self.__db = sqlite3.connect(db_path)
+    
+    def execute(self, query: str, params: tuple = ()):
+        """
+        Exécute une requête SQL.
+        :param query: La requête SQL à exécuter.
+        :param params: Les paramètres de la requête, s'il y en a.
+        """
+        cursor = self.__db.cursor()
+        cursor.execute(query, params)
+        return cursor
 
     def commit(self):
-        return self.__db.commit()
+        """Valide les changements dans la base de données."""
+        self.__db.commit()
 
     def close(self):
+        """Ferme la connexion à la base de données."""
         self.__db.close()
+
+# Exemple d'utilisation
+if __name__ == "__main__":
+    db = Database()
+    try:
+        # Création d'une table pour Terre Agricole si elle n'existe pas déjà
+        db.execute("""
+            CREATE TABLE IF NOT EXISTS Terre_Agricole (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                pays VARCHAR,
+                superficie_agricole FLOAT
+            )
+        """)
+        db.commit()
+    finally:
+        db.close()
