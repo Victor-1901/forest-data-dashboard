@@ -2,7 +2,7 @@ import sqlite3
 
 class Database:
     def __init__(self, db_path="db/mon_projet.db") -> None:
-        """Initialisation de la connexion à la base de données."""
+        """Initialisation de la connexion à la base de données."""     #sert à faciliter l'accès aux données et à s'assurer que toutes les opérations sur la base de données sont faites de manière sécurisée et organisée
         self.__db = sqlite3.connect(db_path)
     
     def execute(self, query: str, params: tuple = ()):

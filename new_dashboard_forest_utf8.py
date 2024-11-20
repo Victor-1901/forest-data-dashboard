@@ -90,18 +90,28 @@ with st.sidebar:
 
    # Menu dans la barre latérale
 with st.sidebar:
-    selected = option_menu("Sommaire Interactif", 
-                           ["Problématique",
-                            "Visualisation des données",
-                            "Statistiques descriptives",
-                            "Analyse par pays / année 2023",
-                            "Évolution par continent (2000-2020)",
-                            "Base de données : Terre agricole",
-                            "Carte interactive : Perte de surface forestière sur 20 ans",
-                            "Vidéo - Déforestation de la forêt amazonienne",
-                            "Conclusion et recommandations"],
-                           default_index=0,
-                           key="menu_selection")
+    selected = option_menu(
+        "Sommaire Interactif", 
+        ["Problématique",
+         "Visualisation des données",
+         "Statistiques descriptives",
+         "Analyse par pays / année 2023",
+         "Évolution par continent (2000-2020)",
+         "Base de données : Terre agricole",
+         "Carte interactive : Perte de surface forestière sur 20 ans",
+         "Vidéo - Déforestation de la forêt amazonienne",
+         "Conclusion et recommandations"],
+        default_index=0,
+        key="menu_selection",
+        menu_icon="cast",  # Icône du menu
+        icons=["question", "bar-chart", "list-task", "globe", "chart-bar", "database", "map", "film", "check-circle"],  # Icônes des options
+        styles={
+            "container": {"padding": "5px", "background-color": "#1B5E20"},
+            "icon": {"color": "white", "font-size": "25px"}, 
+            "nav-link": {"font-size": "20px", "text-align": "left", "margin": "5px", "color": "white"},
+            "nav-link-selected": {"background-color": "#388E3C", "font-weight": "bold"}
+        }
+    )
 
  # Affichage des sections en fonction de la sélection dans le menu interactif
 if selected == "Problématique":
