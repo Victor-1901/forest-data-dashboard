@@ -5,3 +5,6 @@ pandas
 scikit_learn
 seaborn
 streamlit
+folium
+streamlit-folium
+streamlit-option-menu
