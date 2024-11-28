@@ -1,78 +1,84 @@
-# Projet : Dashboard Interactif - Évolution de la Surface Forestière
+# **Projet : Dashboard Interactif - Évolution de la Surface Forestière**
 
-## Description du projet
-Ce projet consiste en la création d'un dashboard interactif permettant de visualiser l'évolution de la surface forestière à l'échelle mondiale, continentale et par pays, sur la période 2000-2020. L'objectif principal est de présenter des données sur la déforestation et la gestion des forêts à travers différents graphiques interactifs et une carte dynamique.
+## **Description du projet**
+Ce projet vise à créer un dashboard interactif permettant de visualiser l'évolution de la surface forestière à l'échelle mondiale, continentale et par pays, sur la période 2000-2020.  
+L'objectif est de sensibiliser sur la déforestation et la gestion des forêts grâce à des visualisations interactives et une carte dynamique.
 
-## Fonctionnalités principales
-- **Visualisation des données** : Le dashboard permet de consulter différentes visualisations de données relatives à la surface forestière.
-- **Musique d'ambiance** : La possibilité de jouer de la musique de fond pour rendre l'expérience plus immersive.
-- **Carte interactive** : Affichage interactif de la perte de la superficie forestière sur les 20 dernières années avec Folium.
-- **Statistiques descriptives** : Des statistiques clés sur les données de surface forestière sont affichées.
-- **Graphiques dynamiques** : Des graphiques montrant la répartition de la surface forestière par continent et par pays.
-- **Base de données : Terre agricole** : Accès aux données des terres agricoles à partir d'une base de données SQLite intégrée.
+---
 
-## Comment activer l'application
-Clonez ce dépôt sur votre machine locale :
+## **Fonctionnalités principales**
+- **Visualisation des données** : Graphiques interactifs pour explorer les tendances de la surface forestière.
+- **Carte interactive** : Suivi de la perte de superficie forestière avec des points interactifs.
+- **Statistiques descriptives** : Indicateurs clés sur les surfaces forestières par continent et pays.
+- **Musique d'ambiance** : Intégration d'une musique immersive.
+- **Base de données SQLite** : Gestion des données agricoles et forestières.
 
-```bash
-git clone https://github.com/Victor-1901/forest-data-dashboard.git
-```
+---
 
-Assurez-vous d'avoir Python et les bibliothèques suivantes installées :
+## **Accéder à l'application**
 
-- `streamlit`
-- `pandas`
-- `folium`
-- `streamlit-folium`
-- `streamlit-option-menu`
+### **1. En ligne avec Streamlit Cloud**
+L'application est déployée et accessible publiquement :  
+🔗 **[Dashboard Interactif - Évolution de la Surface Forestière](https://victor-1901-forest-data-dashbo-new-dashboard-forest-utf8-2qbtei.streamlit.app/)**
 
-Si ces bibliothèques ne sont pas installées, utilisez la commande suivante pour les installer :
+---
 
-```bash
-pip install streamlit pandas folium streamlit-folium streamlit-option-menu
-```
+### **2. En local avec Streamlit**
+1. Clonez ce dépôt sur votre machine :
+   ```bash
+   git clone https://github.com/Victor-1901/forest-data-dashboard.git
 
-Exécutez l'application avec Streamlit :
+2 Installez les dépendances :
+pip install -r requirements.txt
 
-```bash
+3 Lancez l'application Streamlit :
 streamlit run new_dashboard_forest_utf8.py
-```
 
-L'application sera accessible via votre navigateur web à l'adresse par défaut de Streamlit (http://localhost:8501).
+4 Accédez à l'application dans votre navigateur à l'adresse :
+ http://localhost:8501.
 
-## Structure du projet
-Le projet est organisé pour respecter l'architecture **MVC** de manière principalement théorique. Voici la structure des dossiers et leur contenu :
+3. Avec Docker
+1 Construisez l'image Docker :
+  docker build -t forest-dashboard .
 
-- **`new_dashboard_forest_utf8.py`** : Fichier principal à la racine du projet qui sert de point d'entrée à l'application. Il contient toute la logique de l'interface utilisateur via Streamlit.
-- **`assets/`** : Contient les ressources telles que les fichiers CSS, les images, les vidéos, et l'audio utilisés par l'application.
-  - **`images/`**, **`video/`**, **`audio/`**, **`fichier.css`**
-- **`db/`** : Contient la base de données SQLite.
-  - **`mon_projet.db`**
-- **`src/models/`** : Contient la partie "Modèle" de l'architecture.
-  - **`database.py`** : Gestion de la connexion à la base de données.
-  - **`session.py`** : Gestion simplifiée des transactions de base de données.
-  - **`models.py`** : Définition des entités si nécessaire.
-- **`src/views/`** : Contient la partie "Vue" de l'architecture.
-  - **`display.py`** : Fonctions pour gérer l'affichage des données et des graphiques dans l'application.
+2 Lancez un conteneur Docker :
+docker run -p 8501:8501 forest-dashboard
 
-### Architecture MVC
-L'architecture **Model-View-Controller (MVC)** est utilisée de manière théorique dans ce projet pour organiser le code :
+3 Accédez à l'application dans votre navigateur à l'adresse :
+http://localhost:8501
 
-- **Model** : Gère les données et leur transformation. Le dossier `src/models/` regroupe tout ce qui est relatif à la gestion des données.
-- **View** : Gère l'affichage et l'interface utilisateur. Le fichier `new_dashboard_forest_utf8.py` est utilisé pour afficher les données avec Streamlit. Le fichier `display.py` est utilisé pour organiser les éléments de présentation.
-- **Controller** : La logique de contrôle est intégrée directement dans `new_dashboard_forest_utf8.py` en tant que fonctions permettant de coordonner la vue et le modèle.
+Structure du projet
+Le projet est structuré pour faciliter son organisation et son déploiement :
 
-### Limitations
-- Le modèle MVC n'est appliqué que de manière théorique. L'application fonctionne principalement en utilisant un fichier principal qui orchestre l'affichage et l'accès aux données.
-- Les fichiers et données sont chargés localement, ce qui peut poser des limitations pour une utilisation à grande échelle.
+Racine du projet :
 
-## Auteurs
-- Victor - Développeur principal
+new_dashboard_forest_utf8.py : Fichier principal contenant toute la logique de l'application.
+requirements.txt : Liste des bibliothèques nécessaires.
+Dockerfile : Fichier pour créer une image Docker de l'application.
+Dossiers :
 
-## Licence
-Ce projet est sous licence MIT.
+assets/ : Contient les ressources utilisées par l'application :
+fichier.css : Fichier de style pour personnaliser l'interface.
+images/ : Images utilisées dans les visualisations et l'interface.
+audio/ : Fichiers audio pour la musique d'ambiance.
+video/ : Vidéos liées au projet, si nécessaire.
+db/ : Contient la base de données SQLite :
+mon_projet.db : Base de données des données agricoles et forestières.
+src/ : Organisation théorique en MVC :
+models/ :
+database.py : Gestion des connexions à la base de données.
+session.py : Gestion des transactions simplifiées.
+models.py : Définition des entités (si nécessaire).
+views/ :
+display.py : Gestion de l'affichage et des éléments visuels.
+Architecture
+Le projet suit une organisation inspirée du modèle MVC (Model-View-Controller) :
 
-
-
-
-
+Model : Gestion des données et de leur transformation (contenu dans src/models/ et db/).
+View : Interface utilisateur et visualisation des données (Streamlit via new_dashboard_forest_utf8.py et display.py).
+Controller : Logique de l'application, intégrée principalement dans le fichier principal.
+Limitations
+L'application repose sur un fichier principal (new_dashboard_forest_utf8.py) pour la logique et l'affichage, limitant l'implémentation complète d'une architecture MVC.
+Les données sont chargées localement, ce qui peut limiter l'évolutivité pour un usage à grande échelle.
+Auteur
+Victor - Développeur principal.
