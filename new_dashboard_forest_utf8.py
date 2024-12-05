@@ -63,9 +63,9 @@ if image_base64:
     """, unsafe_allow_html=True)
 
 # Titre principal avec un saut de ligne pour plus de clarté
-st.title("Dashboard Interactif :")
+st.title("EGF:")
 # Sous-titre avec st.markdown() pour appliquer l'animation et le style
-st.markdown("<h2 class='stSubheader'>Évolution de la Surface Forestière</h2>", unsafe_allow_html=True)
+st.markdown("<h2 class='stSubheader'>Évolution Globale des Forêts</h2>", unsafe_allow_html=True)
 
 
 # Menu dans la barre latérale
