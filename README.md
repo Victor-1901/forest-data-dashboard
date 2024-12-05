@@ -1,7 +1,7 @@
-# **Projet : Dashboard Interactif - Évolution de la Surface Forestière**
+# **Projet : EGF - Évolution Globale des Forêts**
 
 ## **Description du projet**
-Ce projet vise à créer un dashboard interactif permettant de visualiser l'évolution de la surface forestière à l'échelle mondiale, continentale et par pays, sur la période 2000-2020.  
+Ce projet vise à créer une application interractive sous forme d'un dashboard permettant de visualiser l'évolution de la surface forestière à l'échelle mondiale, continentale et par pays, sur la période 2000-2020.  
 L'objectif est de sensibiliser sur la déforestation et la gestion des forêts grâce à des visualisations interactives et une carte dynamique.
 
 ---
@@ -46,12 +46,6 @@ docker run -p 8501:8501 forest-dashboard
 
 3 Accédez à l'application dans votre navigateur à l'adresse :
 http://localhost:8501
-
-# **Projet : Dashboard Interactif - Évolution de la Surface Forestière**
-
-## **Description du projet**
-Ce projet vise à créer un dashboard interactif permettant de visualiser l'évolution de la surface forestière à l'échelle mondiale, continentale et par pays, sur la période 2000-2020.  
-L'objectif est de sensibiliser sur la déforestation et la gestion des forêts grâce à des visualisations interactives et une carte dynamique.
 
 ---
 
